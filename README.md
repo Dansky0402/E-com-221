@@ -16,9 +16,9 @@ With mvc structure we divide project into many folder: <br />
 ### Installation
 1. To run php and mysql conveniently together install XAMPP: 
     - https://www.apachefriends.org/download.html
-2. Add ~/xampp/php to Global environment variables path.
 2. After that install Composer (a PHP package manager):
     - https://getcomposer.org/download/
+3. Add ~/xampp/php to Global environment variables path.
 3. Restart computer
 4. Delete *vendor* folder if exist
 5. Check for Composer version:
@@ -49,11 +49,19 @@ DB_DSN=mysql:host=localhost;dbname=ecom
 DB_USER=root
 DB_PASSWORD=''
 ```
-
 ### Run MySQL DBMS
 Turn on XAMPP
 + Start Apache
 + Start MySQL
+
+### Change Apache web server startup directory
+In XAMPP, Apache, config section:
+Change the httpd.conf, 'Documentroot' both fields and restart Apache server 
+
+```bash
+~/E-com-221/public 
+```
+
 ### Run migration:
 In terminal:
 ```bash
@@ -64,29 +72,7 @@ The terminal should return:
 [2021-10-28 19:10:49] - Applying migration m0001_initial.php
 [2021-10-28 19:10:49] - Applyied migration m0001_initial.php
 ```
-
 Else, drop all table in database and re-run migration
 ## Run project
-
-Change the httpd.conf, 'Documentroot' both fields and restart Apache server 
-
-```bash
-~/E-com-221/public 
-```
-
-\item Github page: \href{https://github.com/Dansky0402/E-com-221.git}{Link}
-    \item Set up an XAMPP server. Clear out $xampp\backslash htdocs$.
-    \item Extract the supplied archive into $xampp\backslash htdocs$.
-    \item Add $path\_to\_/XAMPP/php$ to Global variable path. 
-    \item Install latest version of Composer in  \href{https://getcomposer.org/download/}{Link} and run "composer install" in terminal.
-    \item Create .env file in the root directory of the system and add the following:
-    \begin{lstlisting}[caption=Database Config, style=mystyle]
-    DB_DSN=mysql:host=localhost;dbname=ecom
-    DB_USER=root
-    DB_PASSWORD=''
-    \end{lstlisting}
-    \item Start XAMPP, enable Apache and MYSQL webserver.
-    \item Open terminal, run \colorbox{lightgray}{php migrations.php}. 
-    If error, go to Phpmyadmin, create a table name "ecom" and repeat this step.
-    \item Change Apache config, httpd.conf, 'documentroot' to the directory + /public.
-    \item Restart Apache webserver and go to http://localhost and http://localhost/admin for user and admin interface. 
++ Restart XAMPP Apache server, MySQL service.
++ Go to http://localhost and http://localhost/admin for user and admin interface. 
