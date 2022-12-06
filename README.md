@@ -56,7 +56,7 @@ Turn on XAMPP
 
 ### Change Apache web server startup directory
 In XAMPP, Apache, config section:
-Change the httpd.conf, 'Documentroot' both fields and restart Apache server 
+Change the httpd.conf, change both fields under 'Documentroot', save and restart Apache server.
 
 ```bash
 ~/E-com-221/public 
