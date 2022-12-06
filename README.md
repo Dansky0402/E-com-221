@@ -1,5 +1,5 @@
 #PHP MVC SYSTEM
-Using php to create a coffee sale coffee website <br /> <br />
+Using php to create a movie renting website <br /> <br />
 With mvc structure we divide project into many folder: <br />
 
 ./bootstrap: contain bootstrap framework. <br />
@@ -12,12 +12,11 @@ With mvc structure we divide project into many folder: <br />
 ./middlewares: contain middleware. <br />
 ./core: contain the core classes. <br />
 
-It's a simple php-mvc template version 1.0. We will maintain and develop in future.
-
 ## SET UP
 ### Installation
 1. To run php and mysql conveniently together install XAMPP: 
     - https://www.apachefriends.org/download.html
+2. Add ~/xampp/php to Global environment variables path.
 2. After that install Composer (a PHP package manager):
     - https://getcomposer.org/download/
 3. Restart computer
@@ -32,19 +31,13 @@ composer --version
 composer install
 ```
 ### Generating MySQL Database:
-phpMyAdmin config:
-If using XAMPP, goto ```C:\xampp\phpMyAdmin``` and edit ```config.inc.php``` the following line:
-```
-$cfg['Servers'][$i]['password'] = 'admin';
-```
-
 MySQL Config:
 ```
 Server host : localhost
 Database : ecom
 Port : 3306
 Username : root
-Password : admin
+Password : ''
 ```
 
 ### Creating dotenv
@@ -54,7 +47,7 @@ In folder project, create file .env with the following config:
 ```bash
 DB_DSN=mysql:host=localhost;dbname=ecom
 DB_USER=root
-DB_PASSWORD=admin
+DB_PASSWORD=''
 ```
 
 ### Run MySQL DBMS
@@ -75,9 +68,25 @@ The terminal should return:
 Else, drop all table in database and re-run migration
 ## Run project
 
-To run the project, type the following into the terminal:
+Change the httpd.conf, 'Documentroot' both fields and restart Apache server 
 
 ```bash
-cd public
-php -S localhost:8000
+~/E-com-221/public 
 ```
+
+\item Github page: \href{https://github.com/Dansky0402/E-com-221.git}{Link}
+    \item Set up an XAMPP server. Clear out $xampp\backslash htdocs$.
+    \item Extract the supplied archive into $xampp\backslash htdocs$.
+    \item Add $path\_to\_/XAMPP/php$ to Global variable path. 
+    \item Install latest version of Composer in  \href{https://getcomposer.org/download/}{Link} and run "composer install" in terminal.
+    \item Create .env file in the root directory of the system and add the following:
+    \begin{lstlisting}[caption=Database Config, style=mystyle]
+    DB_DSN=mysql:host=localhost;dbname=ecom
+    DB_USER=root
+    DB_PASSWORD=''
+    \end{lstlisting}
+    \item Start XAMPP, enable Apache and MYSQL webserver.
+    \item Open terminal, run \colorbox{lightgray}{php migrations.php}. 
+    If error, go to Phpmyadmin, create a table name "ecom" and repeat this step.
+    \item Change Apache config, httpd.conf, 'documentroot' to the directory + /public.
+    \item Restart Apache webserver and go to http://localhost and http://localhost/admin for user and admin interface. 
