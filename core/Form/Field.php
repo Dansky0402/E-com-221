@@ -12,7 +12,6 @@ class Field
     public const TYPE_PASSWORD = 'password';
     public const TYPE_NUMBER = 'number';
 
-
     public Model $model;
     public string $attribute;
     public string $type;
@@ -27,7 +26,6 @@ class Field
     public function __toString()
     {
         return sprintf(
-            // We use different type for fields like password where character should be hidden
             '
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">%s</label>

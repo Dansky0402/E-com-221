@@ -32,8 +32,8 @@ $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
 $orderInfo = "Thanh toán qua MoMo";
 $amount = "10000";
 $orderId = time() ."";
-$redirectUrl = "http://localhost:8000/cart?returnBool=true";
-$ipnUrl = "http://localhost:8000/cart?returnBool=true";
+$redirectUrl = "http://localhost/cart?returnBool=true";
+$ipnUrl = "http://localhost/cart?returnBool=true";
 $extraData = "";
 
 

@@ -1,6 +1,8 @@
 <?php
 if(isset($_GET['returnBool'])) {
     $returnBool = $_GET['returnBool'];
+    //if success, add that item to the movie id allowed for that user
+    
 }
 
 

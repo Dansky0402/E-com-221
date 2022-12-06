@@ -88,7 +88,6 @@ class User extends UserModel
         return parent::save();
     }
 
-    // Save này chỉ dùng lưu user, viết lại save khác cho model khác pls
     public function save()
     {
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
